@@ -16,7 +16,7 @@ public class Ship {
         this.hp = hp;
         while(cnt==0) {
         	if(position[randomX][randomY]!=1) {
-        		this.position[randomX][randomY] = 1 ;//X,YÀ•W‚ÉˆÊ’u‚Å‚ ‚é1‚ğİ’è
+        		this.position[randomX][randomY] = 1 ;//X,Yåº§æ¨™ã«ä½ç½®ã§ã‚ã‚‹1ã‚’è¨­å®š
         		System.out.println(this.position[randomX][randomY]+this.name);
         		cnt--;
         	} else {
@@ -27,14 +27,14 @@ public class Ship {
     }
     
     public void nearmiss(int x,int y,String name) {
-        System.out.printf("%s::X=%d,Y=%d:”g‚‚µ\n",this.name,x,y);
+        System.out.printf("%s::X=%d,Y=%d:æ³¢é«˜ã—\n",this.name,x,y);
     }
     
-    public int getXY(int x,int y) { //’læ‚èo‚µ
+    public int getXY(int x,int y) { //å€¤å–ã‚Šå‡ºã—
     	return position[x][y];
     }
     
-    public void shoot(int[][] input,int x,int y) { //“ü—Í’l‚Æ‘D‚ÌˆÊ’u‚ª“¯‚¶‚È‚çƒƒ\ƒbƒhÀsB‹ß‚¢‚È‚çƒjƒAƒ~ƒXƒƒ\ƒbƒhÀsB‚Å‚à‚±‚ê‚Å‚ ‚Á‚Ä‚é‚Ì‚©H
+    public void shoot(int[][] input,int x,int y) { //å…¥åŠ›å€¤ã¨èˆ¹ã®ä½ç½®ãŒåŒã˜ãªã‚‰ãƒ¡ã‚½ãƒƒãƒ‰å®Ÿè¡Œã€‚è¿‘ã„ãªã‚‰ãƒ‹ã‚¢ãƒŸã‚¹ãƒ¡ã‚½ãƒƒãƒ‰å®Ÿè¡Œã€‚
     	if(input[x][y]==getXY(x,y)){
     		hit(this.hp);
     	} else if(st[0][1]==getXY(x,y)||st[1][0]==getXY(x,y)||st[1][2]==getXY(x,y)||st[2][1]==getXY(x,y)) {
@@ -47,16 +47,16 @@ public class Ship {
     public void ShipA(int hp) {
     	switch(this.hp) {
     		case 3:
-    			System.out.printf("%s:¶‚«‚Ä‚é\n",this.name);
+    			System.out.printf("%s:ç”Ÿãã¦ã‚‹\n",this.name);
     			break;
     		case 2:
-    			System.out.printf("%s:­‚µ¶‚«‚Ä‚é\n",this.name);
+    			System.out.printf("%s:å°‘ã—ç”Ÿãã¦ã‚‹\n",this.name);
     			break;
     		case 1:
-    			System.out.printf("%s:€‚É‚©‚¯\n",this.name);
+    			System.out.printf("%s:æ­»ã«ã‹ã‘\n",this.name);
     			break;
     		default:
-    			System.out.printf("%s:€–S\n",this.name);
+    			System.out.printf("%s:æ­»äº¡\n",this.name);
     			break;
     	}
     }
@@ -64,7 +64,7 @@ public class Ship {
     public void hit(int hp) {
     	if(this.hp>0) {
     		this.hp -=1;
-    		System.out.printf("&s‚Éƒqƒbƒgc‚è%d",this.name,this.hp);
+    		System.out.printf("&sã«ãƒ’ãƒƒãƒˆæ®‹ã‚Š%d",this.name,this.hp);
     	}else {
     		Game.miss();
     	}
