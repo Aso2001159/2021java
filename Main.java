@@ -1,9 +1,8 @@
-package ship_game;
 import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        // TODO Ž©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
+        // TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸãƒ¡ã‚½ãƒƒãƒ‰ãƒ»ã‚¹ã‚¿ãƒ–
     	
     	Scanner sc = new Scanner(System.in);
         Random random = new Random();
@@ -13,6 +12,7 @@ public class Main {
         int[][] input= new int[5][5];
         int randomValue01 =1 + random.nextInt(4);
         int randomValue02 =1 + random.nextInt(4);
+        System.out.println(randomValue01+" "+randomValue02);
         
         Ship s1 = new Ship("s1",randomValue01,randomValue02,3);
         Ship s2 = new Ship("s2",randomValue01,randomValue02,3);
@@ -25,18 +25,17 @@ public class Main {
     		s1.ShipA(s1.hp);
     		s2.ShipA(s2.hp);
     		s3.ShipA(s3.hp);
-    		System.out.println("À•W‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢(0-4,5ˆÈã‚Í4‚É‚È‚é)");
+    		System.out.printf("åº§æ¨™ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„(0-4,5ä»¥ä¸Šã¯4ã«ãªã‚‹)\n");
     		inputX = sc.nextInt();
-    		inputY= sc.nextInt();
+    		inputY = sc.nextInt();
     		if(inputX>=5||inputY>=5) {
     			inputX = 4;
     			inputY = 4;
     		}
     		input[inputX][inputY]=1;
-    		s1.shoot(input,inputX,inputY);
-    		s2.shoot(input,inputX,inputY);
-    		s3.shoot(input,inputX,inputY);
-    		
+    		s1.shoot(inputX,inputY);
+    		s2.shoot(inputX,inputY);
+    		s3.shoot(inputX,inputY);
     	}        
         sc.close();
     }
